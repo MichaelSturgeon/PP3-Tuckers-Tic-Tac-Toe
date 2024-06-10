@@ -68,6 +68,8 @@ def update_board():
     else:
         pass
 
+    change_player()
+
 
 def check_winner():
     """
@@ -86,6 +88,14 @@ def check_winner():
 
             if current_player == "O":
                 print("\n               O YOU WIN!!!\n")
+
+
+def change_player():
+    global current_player
+    if current_player == "X":
+        current_player = "O"
+    else:
+        current_player = "X"                
 
 
 def main():
