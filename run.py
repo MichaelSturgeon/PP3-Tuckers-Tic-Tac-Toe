@@ -4,6 +4,18 @@ cells = ["", " ", " ", " ", " ", " ", " ", " ", " ", " "]
 # Current player variable
 current_player = "X"
 
+# Game winning combinations
+COMBOS = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [1, 4, 7],
+    [2, 5, 8],
+    [3, 6, 9],
+    [1, 5, 9],
+    [7, 5, 3],
+]
+
 def game_instructions():
     """
     Display the game instructions to the user.
@@ -43,7 +55,8 @@ def update_board():
     try:
         choice = int(input("    Please enter an empty cell number: "))
         if cells[choice] == " ":
-            cells[choice] = current_player                                                
+            cells[choice] = current_player
+            check_winner()                                                
         else:
             print("  ## This cell is taken, please choose and EMPTY cell! ##")
         if choice < 1:
@@ -54,6 +67,25 @@ def update_board():
         print("  ## Please enter a NUMBER between 1-9! ##")
     else:
         pass
+
+
+def check_winner():
+    """
+    Check to see if any of the winning combinations have been met.
+    """
+    for i in range(len(COMBOS)):        
+        CONDITION = COMBOS[i]            
+        CELL_A = cells[CONDITION[0]]
+        CELL_B = cells[CONDITION[1]]
+        CELL_C = cells[CONDITION[2]]
+        if CELL_A == " " or CELL_B == " " or CELL_C == " ":
+            continue
+        if CELL_A == CELL_B and CELL_B == CELL_C:
+            if current_player == "X":
+                print("\n               X YOU WIN!!!\n")
+
+            if current_player == "O":
+                print("\n               O YOU WIN!!!\n")
 
 
 def main():
