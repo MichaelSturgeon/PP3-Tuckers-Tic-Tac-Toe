@@ -53,7 +53,7 @@ def update_board():
     Update the game board with a valid input.
     """
     try:
-        choice = int(input("    Please enter an empty cell number: "))
+        choice = int(input(f"    {current_player} Make your move! (1-9): "))
         if cells[choice] == " ":
             cells[choice] = current_player
             check_winner()
@@ -83,14 +83,15 @@ def check_winner():
         if CELL_A == " " or CELL_B == " " or CELL_C == " ":
             continue
         if CELL_A == CELL_B and CELL_B == CELL_C:
-            if current_player == "X":
-                print("\n               X YOU WIN!!!\n")
-
-            if current_player == "O":
-                print("\n               O YOU WIN!!!\n")
+            render_board()
+            print(f"\n               {current_player} WON THIS ROUND!!!\n")
 
 
 def check_tie():
+    """
+    Check to see if all the cells are full
+    and if so the game will end in a tie.
+    """
     board_full = True
     for i in range(len(cells)):
         if cells[i] == " ":
@@ -105,6 +106,9 @@ def check_tie():
 
 
 def change_player():
+    """
+    Find the current player marker and change it to its counter part.
+    """
     global current_player
     if current_player == "X":
         current_player = "O"
