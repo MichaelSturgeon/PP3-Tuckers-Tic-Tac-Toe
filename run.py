@@ -1,3 +1,6 @@
+# Imported moduels
+import sys
+
 # Board cell values
 cells = ["", " ", " ", " ", " ", " ", " ", " ", " ", " "]
 
@@ -85,6 +88,7 @@ def check_winner():
         if CELL_A == CELL_B and CELL_B == CELL_C:
             render_board()
             print(f"\n               {current_player} WON THIS ROUND!!!\n")
+            replay_game()
 
 
 def check_tie():
@@ -100,9 +104,8 @@ def check_tie():
 
     if board_full == True:
         render_board()
-        print("\n        THIS ROUND IS A TIE!!!\n")            
-
-
+        print("\n        THIS ROUND IS A TIE!!!\n")
+        replay_game()            
 
 
 def change_player():
@@ -114,6 +117,26 @@ def change_player():
         current_player = "O"
     else:
         current_player = "X"                
+
+
+def replay_game():
+    """
+    Replay or exit game using valid input.
+    """
+    answer = input("     Do you want to play again (Y/N)").strip().lower()
+
+    if answer == 'y':
+        global cells, current_player
+        cells = ["", " ", " ", " ", " ", " ", " ", " ", " ", " "]
+        current_player = "X"
+        main()
+    elif answer == 'n':
+        print("\n               Until next time!\n")
+        sys.exit()
+    else:
+        print("  ## Input invalid. Enter either 'Y' or 'N' ##")
+        replay_game()
+
 
 
 def main():
