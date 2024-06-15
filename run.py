@@ -56,7 +56,9 @@ def update_board():
         choice = int(input("    Please enter an empty cell number: "))
         if cells[choice] == " ":
             cells[choice] = current_player
-            check_winner()                                                
+            check_winner()
+            check_tie()
+            change_player()                                                
         else:
             print("  ## This cell is taken, please choose and EMPTY cell! ##")
         if choice < 1:
@@ -66,9 +68,7 @@ def update_board():
     except ValueError:
         print("  ## Please enter a NUMBER between 1-9! ##")
     else:
-        pass
-
-    change_player()
+        pass    
 
 
 def check_winner():
@@ -88,6 +88,20 @@ def check_winner():
 
             if current_player == "O":
                 print("\n               O YOU WIN!!!\n")
+
+
+def check_tie():
+    board_full = True
+    for i in range(len(cells)):
+        if cells[i] == " ":
+            board_full = False
+            break
+
+    if board_full == True:
+        render_board()
+        print("\n        THIS ROUND IS A TIE!!!\n")            
+
+
 
 
 def change_player():
