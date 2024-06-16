@@ -156,7 +156,7 @@ def replay_game():
         global cells, current_player
         cells = ["", " ", " ", " ", " ", " ", " ", " ", " ", " "]
         current_player = "X"
-        main()
+        play_game()
     elif answer == 'n':
         os.system('clear')
         render_cowboy("               Until next time!")
@@ -206,17 +206,18 @@ def render_cowboy_legend(message):
     print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠉⢧⠁⡇⠀⠀⠀⠀⠀")
     print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠀⠛⠀⠀⠀⠀⠀⠀")
 
-
+def play_game():    
+    while True:
+        render_legend()
+        render_board()
+        update_board()
 
 def main():
     """
     Run the game functions.
     """
     game_instructions()
-    while True:
-        render_legend()
-        render_board()
-        update_board()          
+    play_game()          
     
 
 main()
