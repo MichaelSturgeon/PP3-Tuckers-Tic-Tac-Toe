@@ -69,7 +69,7 @@ def update_board():
     Update the game board with a valid input.
     """
     try:
-        choice = int(input(f"    {current_player} Make your move! (1-9): "))
+        choice = int(input(f"    {current_player} Make your move! (1-9):\n"))
         
         if choice < 1:
             os.system('clear')
@@ -150,7 +150,7 @@ def replay_game():
     """
     Replay or exit game using valid input.
     """
-    answer = input("     Do you want to play again (Y/N)").strip().lower()
+    answer = input("     Do you want to play again (Y/N):\n").strip().lower()
     if answer == 'y':
         os.system('clear')
         global cells, current_player
