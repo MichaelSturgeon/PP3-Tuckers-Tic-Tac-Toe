@@ -1,5 +1,7 @@
 # Imported modules
-import sys, os, time
+import os
+import time
+import sys
 
 
 # Board cell values
@@ -20,6 +22,7 @@ COMBOS = [
     [7, 5, 3],
 ]
 
+
 def game_instructions():
     """
     Display the game instructions to the user.
@@ -27,19 +30,19 @@ def game_instructions():
     render_cowboy("Heres what you need to know about Tic-Tac-Toe!!!")
     time.sleep(4)
     os.system('clear')
-    render_cowboy("1: Take turns marking an empty cell!")
+    render_cowboy("1.. Take turns marking an empty cell!")
     time.sleep(4)
     os.system('clear')
-    render_cowboy("2: Get 3 marks in a row to win!(up/down, across, or diagonal)")
+    render_cowboy("2.. Mark 3 in a row to win!(up/down, across, or diagonal)")
     time.sleep(4)
     os.system('clear')
-    render_cowboy_legend("3: This legend is provided to help you make your moves!")
+    render_cowboy_legend("3.. This legend will help you navigate the board!")
     time.sleep(4)
     os.system('clear')
-    render_cowboy("4: When all the cells are full the game is over!")
+    render_cowboy("4.. When all the cells are full the game is over!")
     time.sleep(4)
     os.system('clear')
-    render_cowboy("5: If no player has 3 in a row, the game ends in a tie!")
+    render_cowboy("5.. If no player has 3 in a row, the game ends in a tie!")
     time.sleep(4)
     os.system('clear')
 
@@ -70,11 +73,11 @@ def update_board():
     """
     try:
         choice = int(input(f"    {current_player} Make your move! (1-9):\n"))
-        
+
         if choice < 1:
             os.system('clear')
             raise IndexError(" ## Please enter a number between 1-9! ##")
-            time.sleep(2)        
+            time.sleep(2)
         if cells[choice] == " ":
             os.system('clear')
             cells[choice] = current_player
@@ -84,7 +87,7 @@ def update_board():
         else:
             os.system('clear')
             print("  ## This cell is taken, please choose an EMPTY cell! ##")
-            time.sleep(2)        
+            time.sleep(2)
     except IndexError:
         os.system('clear')
         print("  ## Please only enter a number between 1-9! ##")
@@ -94,15 +97,15 @@ def update_board():
         print("  ## Please enter a NUMBER between 1-9! ##")
         time.sleep(2)
     else:
-        pass    
+        pass
 
 
 def check_winner():
     """
     Check to see if any of the winning combinations have been met.
     """
-    for i in range(len(COMBOS)):        
-        CONDITION = COMBOS[i]            
+    for i in range(len(COMBOS)):
+        CONDITION = COMBOS[i]
         CELL_A = cells[CONDITION[0]]
         CELL_B = cells[CONDITION[1]]
         CELL_C = cells[CONDITION[2]]
@@ -127,12 +130,12 @@ def check_tie():
             board_full = False
             break
 
-    if board_full == True:
+    if board_full:
         render_board()
         render_cowboy("        THIS ROUND IS A TIE!!!")
         time.sleep(4)
         os.system('clear')
-        replay_game()            
+        replay_game()
 
 
 def change_player():
@@ -143,7 +146,7 @@ def change_player():
     if current_player == "X":
         current_player = "O"
     else:
-        current_player = "X"                
+        current_player = "X"
 
 
 def replay_game():
@@ -206,18 +209,20 @@ def render_cowboy_legend(message):
     print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠉⢧⠁⡇⠀⠀⠀⠀⠀")
     print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠀⠛⠀⠀⠀⠀⠀⠀")
 
-def play_game():    
+
+def play_game():
     while True:
         render_legend()
         render_board()
         update_board()
+
 
 def main():
     """
     Run the game functions.
     """
     game_instructions()
-    play_game()          
-    
+    play_game()
+
 
 main()
