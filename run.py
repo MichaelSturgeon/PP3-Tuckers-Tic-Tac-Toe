@@ -1,4 +1,4 @@
-# Imported moduels
+# Imported modules
 import sys, os, time
 
 
@@ -58,20 +58,21 @@ def update_board():
     """
     try:
         choice = int(input(f"    {current_player} Make your move! (1-9): "))
+        
+        if choice < 1:
+            os.system('clear')
+            raise IndexError(" ## Please enter a number between 1-9! ##")
+            time.sleep(2)        
         if cells[choice] == " ":
             os.system('clear')
             cells[choice] = current_player
             check_winner()
             check_tie()
-            change_player()                                                
+            change_player()
         else:
             os.system('clear')
-            print("  ## This cell is taken, please choose and EMPTY cell! ##")
-            time.sleep(2)
-        if choice < 1:
-            os.system('clear')
-            raise IndexError(" ## Please enter a number between 1-9! ##")
-            time.sleep(2)
+            print("  ## This cell is taken, please choose an EMPTY cell! ##")
+            time.sleep(2)        
     except IndexError:
         os.system('clear')
         print("  ## Please only enter a number between 1-9! ##")
