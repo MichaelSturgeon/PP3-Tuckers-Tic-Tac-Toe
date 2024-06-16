@@ -1,5 +1,6 @@
 # Imported moduels
-import sys
+import sys, os, time
+
 
 # Board cell values
 cells = ["", " ", " ", " ", " ", " ", " ", " ", " ", " "]
@@ -58,18 +59,27 @@ def update_board():
     try:
         choice = int(input(f"    {current_player} Make your move! (1-9): "))
         if cells[choice] == " ":
+            os.system('clear')
             cells[choice] = current_player
             check_winner()
             check_tie()
             change_player()                                                
         else:
+            os.system('clear')
             print("  ## This cell is taken, please choose and EMPTY cell! ##")
+            time.sleep(2)
         if choice < 1:
+            os.system('clear')
             raise IndexError(" ## Please enter a number between 1-9! ##")
+            time.sleep(2)
     except IndexError:
+        os.system('clear')
         print("  ## Please only enter a number between 1-9! ##")
+        time.sleep(2)
     except ValueError:
+        os.system('clear')
         print("  ## Please enter a NUMBER between 1-9! ##")
+        time.sleep(2)
     else:
         pass    
 
@@ -87,7 +97,9 @@ def check_winner():
             continue
         if CELL_A == CELL_B and CELL_B == CELL_C:
             render_board()
-            print(f"\n               {current_player} WON THIS ROUND!!!\n")
+            print(f"\n         {current_player} WON THIS ROUND!!!\n")
+            time.sleep(4)
+            os.system('clear')
             replay_game()
 
 
@@ -105,6 +117,8 @@ def check_tie():
     if board_full == True:
         render_board()
         print("\n        THIS ROUND IS A TIE!!!\n")
+        time.sleep(4)
+        os.system('clear')
         replay_game()            
 
 
@@ -124,17 +138,21 @@ def replay_game():
     Replay or exit game using valid input.
     """
     answer = input("     Do you want to play again (Y/N)").strip().lower()
-
     if answer == 'y':
+        os.system('clear')
         global cells, current_player
         cells = ["", " ", " ", " ", " ", " ", " ", " ", " ", " "]
         current_player = "X"
         main()
     elif answer == 'n':
+        os.system('clear')
         print("\n               Until next time!\n")
+        time.sleep(2)
         sys.exit()
     else:
+        os.system('clear')
         print("  ## Input invalid. Enter either 'Y' or 'N' ##")
+        time.sleep(2)
         replay_game()
 
 
