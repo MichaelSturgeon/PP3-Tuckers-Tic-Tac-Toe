@@ -32,48 +32,48 @@ When planning for this project, I created a flowchart to help me visualise the n
 
 ## Surface Plane
 ### Project Features
-** Game instructions **
+**Game instructions**
 Only when the program is first run will users be presented with instructions that explain how to play Tic-Tac-Toe. Upon users choosing to play another round, the program skips past the instructions, and gets right back to the game. 
 
-** Game-board legend **
+**Game-board legend**
 Following the game instructions, a small legend of the game board is displayed in the top-left corner of the terminal on the initial launch of the program, as well as each time the game board is updated to help users visualise in which cell they are placing their mark.
 
-** Game-board **
+**Game-board**
 An empty game board is displayed to the user on launch of the program and is then redisplayed after each update of the board, allowing players to see where they have previously placed their mark.
 
-** Conclusion message **
+**Conclusion message**
 One of three messages will be displayed to the user, depending on the outcome of the game. From this game stage, the user can choose to either play another game or end the program
  
 ### Features left to implement
-** vs Computer **
+**vs Computer**
 I plan to incorporate a player vs. computer game mode where players can enjoy the game on their own. The computer will prioritise moves that lead them to victory.
 
-** Highlight the winning move **
+**Highlight the winning move**
 Another feature I aim to implement in the program is to simply display to the user the winning move combination in contrasting colour so that they can clearly see the outcome and potentially up their game!
 
 ## Technologies Used
-** Python Modules **
-- ** Os module ** was used to clear the terminal when updated to reduce any clutter in the terminal.
-- ** Sys module ** was required to end the program
-- ** Time module ** was used to create a delay and provide the user with breathing space between terminal updates.
+**Python Modules**
+- **Os module** was used to clear the terminal when updated to reduce any clutter in the terminal.
+- **Sys module** was required to end the program
+- **Time module** was used to create a delay and provide the user with breathing space between terminal updates.
 
 ## Programs Used
-- ** Balsamiq ** was used to creating flowcharts.
-- ** Git ** was used as a version control system for tracking changes.
-- ** GitHub ** was used as a code hosting platform for version control.
-- ** Gitpod ** was my choice of cloud development environment.
-- ** Heroku ** was used as a method for the deployment of the app
-- ** PEP8 Python Linter ** was used to validate Python code. 
+- **Balsamiq** was used to creating flowcharts.
+- **Git** was used as a version control system for tracking changes.
+- **GitHub** was used as a code hosting platform for version control.
+- **Gitpod** was my choice of cloud development environment.
+- **Heroku** was used as a method for the deployment of the app
+- **PEP8 Python Linter** was used to validate Python code. 
 
 ## Testing
-** PEP8 Python Linter **
+**PEP8 Python Linter**
 I used the Code Institute PEP8 Python Linter to validate my Python code and ensure it was free from errors.
 
-** Detected bugs and solutions **
+**Detected bugs and solutions**
 - When validating the user input upon them selecting their move, if players entered the value `0` they would be met with two error messages, the former that told the user `## This cell is taken, please choose an EMPTY cell! ##` and the latter that told them `## Please only enter a number between 1-9! ##`. This wasn't the intended outcome, as players should only receive the second error message due to `cell 0` not being a viable option. To fix this when validating the value, I checked to see if it was `< 1`, before checking if the cell was equal to `“ ”`.
 
 ## Deployment
-** The site was deployed to Heroku using the following steps:**
+**The site was deployed to Heroku using the following steps:**
 1. Navigate to heroku.com and create an account.
 2. Click the "New" button in the top right corner.
 3. Select "Create new app".
@@ -88,7 +88,7 @@ I used the Code Institute PEP8 Python Linter to validate my Python code and ensu
 12. Click "Deploy Branch".
 13. The app should now be deployed and you can click on the "View" button to view the live site.
   
-** Clone a GitHub repository **
+**Clone a GitHub repository**
 1. Navigate to the GitHub Repository you want to clone.
 2. Click on the "Code" drop down button.
 3. Click on HTTPS.
@@ -97,14 +97,14 @@ I used the Code Institute PEP8 Python Linter to validate my Python code and ensu
 6. Type git clone copied-git-url into the terminal.
 7. The project will now have been cloned on your local machine for use.
 
-** Fork Project **
+**Fork Project**
 1. Navigate to the GitHub Repository you want to fork.
 2. On the top right of the page under the header, click the "Fork" button.
 3. This will create a duplicate of the full project in your GitHub Repository.
 
 ## Credits
 Media
-- [The formation of characters used for the ASCII cowboy was taken from:](https://emojicombo.com/cowboy-ascii-art)
+- The formation of characters used for the ASCII cowboy was taken from:[emojicombos.com](https://emojicombos.com/cowboy-ascii-art)
 
 ## Acknowledgements  
 The completion of this project would not have been possible without the support of my partner; the patience, motivation, and enthusiasm she offers is second to none!
