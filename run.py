@@ -33,7 +33,7 @@ def game_instructions():
     render_cowboy("1.. Take turns marking an empty cell!")
     time.sleep(4)
     os.system('clear')
-    render_cowboy("2.. Mark 3 in a row to win!(up/down, across, or diagonal)")
+    render_cowboy("2.. Mark 3 in a row to win!(up/down, across, diagonal)")
     time.sleep(4)
     os.system('clear')
     render_cowboy_legend("3.. This legend will help you navigate the board!")
