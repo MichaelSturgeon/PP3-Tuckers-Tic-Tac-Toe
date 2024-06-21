@@ -29,8 +29,10 @@ def game_instructions():
     """
     render_cowboy("Howdy partner, welcome to Tucker's Tic-Tac-Toe!")
     time.sleep(4)
-    render_cowboy("...that's me ...I'm Tucker!!")
+    os.system('clear')
+    render_cowboy("...that's me ...I'm Tucker!")
     time.sleep(4)
+    os.system('clear')
     render_cowboy("Anyway heres what you need to know...")
     time.sleep(4)
     os.system('clear')
