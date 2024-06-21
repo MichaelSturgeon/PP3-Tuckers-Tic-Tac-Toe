@@ -27,22 +27,26 @@ def game_instructions():
     """
     Display the game instructions to the user.
     """
-    render_cowboy("Heres what you need to know about Tic-Tac-Toe!!!")
+    render_cowboy("Howdy partner, welcome to Tucker's Tic-Tac-Toe!")
+    time.sleep(4)
+    render_cowboy("...that's me ...I'm Tucker!!")
+    time.sleep(4)
+    render_cowboy("Anyway heres what you need to know...")
     time.sleep(4)
     os.system('clear')
-    render_cowboy("1.. Take turns marking an empty cell!")
+    render_cowboy("1. Players take turns marking an empty cell!")
     time.sleep(4)
     os.system('clear')
-    render_cowboy("2.. Mark 3 in a row to win!(up/down, across, diagonal)")
+    render_cowboy("2. Mark 3 in a row to win!(up/down, across, diagonal)")
     time.sleep(4)
     os.system('clear')
-    render_cowboy_legend("3.. This legend will help you navigate the board!")
+    render_cowboy_legend("3. This legend will help you navigate the board!")
     time.sleep(4)
     os.system('clear')
-    render_cowboy("4.. When all the cells are full the game is over!")
+    render_cowboy("4. When all the cells are full the game is over!")
     time.sleep(4)
     os.system('clear')
-    render_cowboy("5.. If no player has 3 in a row, the game ends in a tie!")
+    render_cowboy("5. If no player has 3 in a row, the game ends in a tie!")
     time.sleep(4)
     os.system('clear')
 
@@ -113,7 +117,7 @@ def check_winner():
             continue
         if CELL_A == CELL_B and CELL_B == CELL_C:
             render_board()
-            render_cowboy(f"         {current_player} WON THIS ROUND!!!")
+            render_cowboy(f"The jig is up, {current_player} won this round!!!")
             time.sleep(4)
             os.system('clear')
             replay_game()
@@ -132,7 +136,7 @@ def check_tie():
 
     if board_full:
         render_board()
-        render_cowboy("        THIS ROUND IS A TIE!!!")
+        render_cowboy("This round ends in a tie!!!")
         time.sleep(4)
         os.system('clear')
         replay_game()
@@ -162,7 +166,7 @@ def replay_game():
         play_game()
     elif answer == 'n':
         os.system('clear')
-        render_cowboy("               Until next time!")
+        render_cowboy("Until we meet again!")
         time.sleep(2)
         sys.exit()
     else:
@@ -184,7 +188,7 @@ def render_cowboy(message):
     print("⠀⠀⠹⡄⠀⠀⢀⣾⣾⠁⢘⣭⣷⣶⠃⣿⣾⣷⣿⣿⣟⠝⠀⠀")
     print("⠀⠀⠀⠈⠢⣀⣸⢳⠛⡄⠀⠀⠀⠁⠀⣧⡀⢸⡽⠗⠁⠀⠀⠀")
     print("⠀⠀⠀⠀⠀⠀⠈⠳⡄⠁⢠⠀⠀⠋⢱⢿⣷⡿⠁⠀⠀⠀⠀⠀")
-    print(f"⠀⠀⠀⠀⠀⠀⠀⠀⡿⠀⢀⠐⠀⢭⣭⣽⣩⡇⠀⠀⠀⠀⠀⠀{message}")
+    print(f"⠀⠀⠀⠀⠀⠀⠀⠀⡿⠀⢀⠐⠀⢭⣭⣽⣩⡇⠀⠀⠀{message}")
     print("⠀⠀⠀⠀⠀⠀⢀⣴⡇⠑⢬⣀⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀")
     print("⠀⠀⠀⠀⠀⢀⠎⠹⡕⠠⢀⣈⠻⢿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀")
     print("⠀⣀⠤⠒⠒⡇⠀⠀⠈⠢⣔⣭⣙⣛⣿⣽⣇⡏⣣⣀⠀⠀⠀⠀")
@@ -206,7 +210,7 @@ def render_cowboy_legend(message):
     print("⠀⠀⠹⡄⠀⠀⢀⣾⣾⠁⢘⣭⣷⣶⠃⣿⣾⣷⣿⣿⣟⠝⠀⠀     4|5|6")
     print("⠀⠀⠀⠈⠢⣀⣸⢳⠛⡄⠀⠀⠀⠁⠀⣧⡀⢸⡽⠗⠁⠀⠀⠀     7|8|9")
     print("⠀⠀⠀⠀⠀⠀⠈⠳⡄⠁⢠⠀⠀⠋⢱⢿⣷⡿⠁⠀⠀⠀⠀⠀")
-    print(f"⠀⠀⠀⠀⠀⠀⠀⠀⡿⠀⢀⠐⠀⢭⣭⣽⣩⡇⠀⠀⠀⠀⠀⠀{message}")
+    print(f"⠀⠀⠀⠀⠀⠀⠀⠀⡿⠀⢀⠐⠀⢭⣭⣽⣩⡇⠀⠀⠀{message}")
     print("⠀⠀⠀⠀⠀⠀⢀⣴⡇⠑⢬⣀⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀")
     print("⠀⠀⠀⠀⠀⢀⠎⠹⡕⠠⢀⣈⠻⢿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀")
     print("⠀⣀⠤⠒⠒⡇⠀⠀⠈⠢⣔⣭⣙⣛⣿⣽⣇⡏⣣⣀⠀⠀⠀⠀")
