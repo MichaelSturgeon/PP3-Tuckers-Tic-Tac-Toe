@@ -1,7 +1,8 @@
 # Tucker’s Tic-Tac-Toe
 
 ## Introduction
-Tucker’s Tic-Tac-Toe is a command-line program developed in Python that provides users with a simple yet fun game of Tic-Tac-Toe. Tucker (the cowboy) will greet users and briefly explain all they need to know about the game. To play Tic-Tac-Toe users take turns filling in cells on a grid of nine squares. The first player to fill in three cells in a row WINS! 
+Tucker’s Tic-Tac-Toe is a command-line program developed in Python that provides users with a simple yet fun game of Tic-Tac-Toe. Tucker (the cowboy) will greet users and briefly explain all they need to know about the game. To play Tic-Tac-Toe users take turns filling in cells on a grid of nine squares. The first player to fill in three cells in a row WINS!<br>
+[Click here to view the project!](https://tuckers-tic-tac-toe-5f932c36e599.herokuapp.com/)
 
 ## User Experience Design
 UXD was heavily considered when developing this terminal based project due to the limited visual features on offer. Below, you'll find the planning and development of the project across each plane.
@@ -28,7 +29,19 @@ Users will be guided through the game with the help of instruction messages that
 The game is intended to be a relatively fast-paced game with short rounds, and so after a brief game conclusion, players can choose to either replay or end the game, with the focus being on getting back to the FUN!
 
 ## Skeleton Plane
-When planning for this project, I created a flowchart to help me visualise the necessary functions needed to create a basic game of Tic-Tac-Toe. The flowchart depicts the journey taken through the program when completing the game. The final deployed project includes the change_player function, which isn't shown on the flowchart. This function changes the player's input marker between `”X”` and `”O”`.
+When planning for this project, I created a flowchart to help me visualise the necessary functions needed to create a basic game of Tic-Tac-Toe. The flowchart depicts the journey taken through the program when completing the game. The final deployed project includes the change_player function, which isn't shown on the flowchart. This function changes the player's input marker between `”X”` and `”O”`. Below, you’ll find the flowchart and a brief description of each step.
+
+1. When the game starts, the instructions are displayed, followed by the game board legend and the game board.
+
+2. Next, the user will be promoted to provide an input of an empty cell number.
+
+3. The program will check to see if the input provided is valid before moving on to one of two outcomes. If the input is valid, a marker will be placed in the cell number provided. If the input is invalid, an error message will be shown, and the player will be guided to input a valid input.
+
+4. Following this, the program will check to see if the latest game board update has produced a winning result. If the game has been won, players will be presented with a message that shows the result of the game. If the game hasn't been won, then the program will check to see if the game has resulted in a tie. If the game does end in a tie, then players will be presented with a message that shows the result of the game. If the game hasn't been won and doesn’t result in a tie, then the programme will request that the other player provide a valid input.
+
+5. When the game has concluded, players are asked to provide a valid input to determine whether or not they would like to play another round of the game or exit the program.
+
+6. Once again, the program will check to see if the input provided is valid before providing an outcome. If the input is invalid, an error message will be shown, and the player will be guided to input a valid input.
 
 ![Project flowchart](/documentation/flowcharts/flowchart.png)<br>
 *This image shows the flowchart used to help create this program*
