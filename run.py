@@ -27,6 +27,7 @@ def game_instructions():
     """
     Display the game instructions to the user.
     """
+    os.system('clear')
     render_cowboy("Howdy partner, welcome to Tucker's Tic-Tac-Toe!")
     time.sleep(4)
     os.system('clear')
@@ -82,7 +83,8 @@ def update_board():
 
         if choice < 1:
             os.system('clear')
-            raise IndexError(" ## Please enter a number between 1-9! ##")
+            raise IndexError(" ## Input invalid. \
+Please enter a number between 1-9! ##")
             time.sleep(2)
         if cells[choice] == " ":
             os.system('clear')
@@ -92,15 +94,17 @@ def update_board():
             change_player()
         else:
             os.system('clear')
-            print("  ## This cell is taken, please choose an EMPTY cell! ##")
+            print("  ## Input invalid. \
+This cell is taken, please choose an EMPTY cell! ##")
             time.sleep(2)
     except IndexError:
         os.system('clear')
-        print("  ## Please only enter a number between 1-9! ##")
+        print("  ## Input invalid. \
+Please only enter a number between 1-9! ##")
         time.sleep(2)
     except ValueError:
         os.system('clear')
-        print("  ## Please enter a NUMBER between 1-9! ##")
+        print("  ## Input invalid. Please enter a NUMBER between 1-9! ##")
         time.sleep(2)
     else:
         pass
