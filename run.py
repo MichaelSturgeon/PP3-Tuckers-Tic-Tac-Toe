@@ -173,6 +173,9 @@ def replay_game():
 
 
 def render_cowboy(message):
+    """
+    Display ASCII art Cowboy with message.
+    """
     print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣠⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀")
     print("⠀⠀⠀⠀⠀⣀⣀⣀⣠⠔⠊⠑⠒⣷⠆⢸⢳⠀⠀⠀⠀⠀⠀⠀")
     print("⠀⠀⢀⠔⠋⠁⠀⠀⠉⠁⠒⠤⣄⠋⠀⠈⢧⡇⠀⠀⣰⣶⢆⠀")
@@ -192,6 +195,9 @@ def render_cowboy(message):
 
 
 def render_cowboy_legend(message):
+    """
+    Display ASCII art Cowboy with gameboard legend
+    """
     print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣠⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀")
     print("⠀⠀⠀⠀⠀⣀⣀⣀⣠⠔⠊⠑⠒⣷⠆⢸⢳⠀⠀⠀⠀⠀⠀⠀")
     print("⠀⠀⢀⠔⠋⠁⠀⠀⠉⠁⠒⠤⣄⠋⠀⠈⢧⡇⠀⠀⣰⣶⢆⠀")
@@ -211,6 +217,9 @@ def render_cowboy_legend(message):
 
 
 def play_game():
+    """
+    Run the main game loop.
+    """
     while True:
         render_legend()
         render_board()
@@ -219,7 +228,7 @@ def play_game():
 
 def main():
     """
-    Run the game functions.
+    Run the game introduction followed by main game loop.
     """
     game_instructions()
     play_game()
