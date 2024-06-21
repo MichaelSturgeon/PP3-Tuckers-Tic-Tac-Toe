@@ -30,25 +30,42 @@ The game is intended to be a relatively fast-paced game with short rounds, and s
 ## Skeleton Plane
 When planning for this project, I created a flowchart to help me visualise the necessary functions needed to create a basic game of Tic-Tac-Toe. The flowchart depicts the journey taken through the program when completing the game. The final deployed project includes the change_player function, which isn't shown on the flowchart. This function changes the player's input marker between `”X”` and `”O”`.
 
+![Project flowchart](/documentation/flowcharts/flowchart.png)<br>
+*This image shows the flowchart used to help create this program*
+
 ## Surface Plane
 ### Project Features
-**Game instructions**
+**Game instructions**<br>
 Only when the program is first run will users be presented with instructions that explain how to play Tic-Tac-Toe. Upon users choosing to play another round, the program skips past the instructions, and gets right back to the game. 
+![Game instruction 1](/documentation/features/intro-instruction-1.png)
+![Game instruction 2](/documentation/features/intro-instruction-2.png)
+![Game instruction 3](/documentation/features/intro-instruction-3.png)
+![Game instruction 4](/documentation/features/intro-instruction-4.png)
+![Game instruction 5](/documentation/features/intro-instruction-5.png)<br>
+*These images show the instructional messages displayed opon running the program.*
 
-**Game-board legend**
+**Game-board legend**<br>
 Following the game instructions, a small legend of the game board is displayed in the top-left corner of the terminal on the initial launch of the program, as well as each time the game board is updated to help users visualise in which cell they are placing their mark.
 
-**Game-board**
-An empty game board is displayed to the user on launch of the program and is then redisplayed after each update of the board, allowing players to see where they have previously placed their mark.
+**Game-board**<br>
+An empty game board is displayed to the user on launch of the program and is then redisplayed after each update of the board, allowing players to see where they have previously placed their mark.<br>
+![Game legend and gameboard](/documentation/features/legend-gameboard.png)<br>
+*This image shows both the game legend and the empty game board.*
 
-**Conclusion message**
-One of three messages will be displayed to the user, depending on the outcome of the game. From this game stage, the user can choose to either play another game or end the program
+**Conclusion message**<br>
+One of three messages will be displayed to the user, depending on the outcome of the game. From this game stage, the user can choose to either play another game or end the program.<br>
+![Game conclution message 1](/documentation/features/tie-message.png)<br>
+*This image shows the message given upon a game tie.*
+
+
+![Game conclution message 2](/documentation/features/win-message.png)<br>
+*This image shows the message given upon a game win.*
  
 ### Features left to implement
-**vs Computer**
+**vs Computer**<br>
 I plan to incorporate a player vs. computer game mode where players can enjoy the game on their own. The computer will prioritise moves that lead them to victory.
 
-**Highlight the winning move**
+**Highlight the winning move**<br>
 Another feature I aim to implement in the program is to simply display to the user the winning move combination in contrasting colour so that they can clearly see the outcome and potentially up their game!
 
 ## Technologies Used
@@ -66,8 +83,10 @@ Another feature I aim to implement in the program is to simply display to the us
 - **PEP8 Python Linter** was used to validate Python code. 
 
 ## Testing
-**PEP8 Python Linter**
+**PEP8 Python Linter**<br>
 I used the Code Institute PEP8 Python Linter to validate my Python code and ensure it was free from errors.
+![Validated code showing no errors](/documentation/validation/code-validation-noerrors.png)<br>
+*This image shows the projects code showing no errors after being validated.*
 
 **Detected bugs and solutions**
 - When validating the user input upon them selecting their move, if players entered the value `0` they would be met with two error messages, the former that told the user `## This cell is taken, please choose an EMPTY cell! ##` and the latter that told them `## Please only enter a number between 1-9! ##`. This wasn't the intended outcome, as players should only receive the second error message due to `cell 0` not being a viable option. To fix this when validating the value, I checked to see if it was `< 1`, before checking if the cell was equal to `“ ”`.
