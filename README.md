@@ -33,7 +33,7 @@ When planning for this project, I created a flowchart to help me visualise the n
 
 1. When the game starts, the instructions are displayed, followed by the game board legend and the game board.
 
-2. Next, the user will be promoted to provide an input of an empty cell number.
+2. Next, the user will be prompted to provide an input of an empty cell number.
 
 3. The program will check to see if the input provided is valid before moving on to one of two outcomes. If the input is valid, a marker will be placed in the cell number provided. If the input is invalid, an error message will be shown, and the player will be guided to input a valid input.
 
@@ -41,7 +41,7 @@ When planning for this project, I created a flowchart to help me visualise the n
 
 5. When the game has concluded, players are asked to provide a valid input to determine whether or not they would like to play another round of the game or exit the program.
 
-6. Once again, the program will check to see if the input provided is valid before providing an outcome. If the input is invalid, an error message will be shown, and the player will be guided to input a valid input.
+6. Once again, the program will check to see if the input provided is valid before providing an outcome. If the input is invalid, an error message will be shown, and the player will be guided to enter a valid input.
 
 ![Project flowchart](/documentation/flowcharts/flowchart.png)<br>
 *This image shows the flowchart used to help create this program*
@@ -49,7 +49,7 @@ When planning for this project, I created a flowchart to help me visualise the n
 ## Surface Plane
 ### Project Features
 **Game instructions**<br>
-Only when the program is first run will users be presented with instructions that explain how to play Tic-Tac-Toe. Upon users choosing to play another round, the program skips past the instructions, and gets right back to the game. 
+Only when the program is first run will users be presented with instructions that explain how to play Tic-Tac-Toe. Upon users choosing to play another round, the program skips past the instructions, and gets right back to the game.<br> 
 ![Game instruction 1](/documentation/features/intro-instruction-1.png)
 ![Game instruction 2](/documentation/features/intro-instruction-2.png)
 ![Game instruction 3](/documentation/features/intro-instruction-3.png)
@@ -109,7 +109,7 @@ I used the Code Institute PEP8 Python Linter to validate my Python code and ensu
 | Introduction | Upon running the program, the game runs through the instructions. | Run the program. | This feature responds as expected. |
 | Render the legend. | Within the main loop of the program, the game board legend is displayed to the user, both during the launch and for each iteration of the game. | Run the program and play an iteration of the main loop. | This feature responds as expected. |
 | Render the game board. | Within the main loop of the program, the game board is displayed to the user, showing empty cells on launch, and populated cells each subsequent iteration. | Run the program and play an iteration of the main loop. | This feature responds as expected. |
-| Cell choice input | Request the user to `## Please enter a number between 1-9! ##` and loop until the input is validated, then update the board. | Inputs: `“ ”`, `“0”`, `“11”`, `“Cat”` and `Enter key` | Loops until the input is validated, with appropriate error messages.<br>1.`## Input invalid. Please enter a number between 1-9! ##`<br> 2.`## Input invalid. This cell is taken, please choose an EMPTY cell! ##`<br>3.`## Input invalid. Please only enter a number between 1-9! ##`<br>4.`## Input invalid. Please enter a NUMBER between 1-9! ##` |
+| Cell choice input | Request `{current_player} Make your move! (1-9):` and loop until the input is validated, then update the board. | Inputs: `“ ”`, `“0”`, `“11”`, `“Cat”` and `Enter key` | Loops until the input is validated, with appropriate error messages.<br>1.`## Input invalid. Please enter a number between 1-9! ##`<br> 2.`## Input invalid. This cell is taken, please choose an EMPTY cell! ##`<br>3.`## Input invalid. Please only enter a number between 1-9! ##`<br>4.`## Input invalid. Please enter a NUMBER between 1-9! ##` |
 | Check for winner | After each game board update, the `check_winner` function checks to see if any of the winning combos have been executed for each player marker. | Run the program and play several rounds of the game. | This feature responds as expected. |
 | Check for a tie | After checking for a winner, the check-tie function checks to see if any game board cells are free to either continue or conclude the game. | Run the program and play several rounds of the game. | This feature responds as expected. |
 | Change the current player | Change the current player from one to the other, i.e., change `“X”` to `”O”` and vice versa. | Run the program and play a round of the game. | This feature responds as expected. |
