@@ -45,10 +45,13 @@ When planning for this project, I created a flowchart to help me visualise the n
 6. Once again, the program will check to see if the input provided is valid before providing an outcome. If the input is invalid, an error message will be shown, and the player will be guided to enter a valid input.
 
 ![Project flowchart](/documentation/flowcharts/flowchart.png)<br>
-*This image shows the flowchart used to help create this program*
+*This image shows the flowchart used to help create this program.*
 
 ## Surface Plane
 ### Project Features
+**Tucker**<br>
+Tucker is a friendly cowboy who loves to play Tic-Tac-Toe. He is the life of the party and the heart of the game, or so he thinks. He brings a joyful and personable feel to the game, providing anyone who plays it with a positive emotional experience.
+
 **Game instructions**<br>
 Only when the program is first run will users be presented with instructions that explain how to play Tic-Tac-Toe. Upon users choosing to play another round, the program skips past the instructions, and gets right back to the game.<br> 
 ![Game instruction 1](/documentation/features/intro-instruction-1.png)
@@ -108,7 +111,7 @@ I used the Code Institute PEP8 Python Linter to validate my Python code and ensu
 | Feature | Expected Outcome | Testing Procedure | Result |
 |----------|----------|----------|----------|
 | Introduction | Upon running the program, the game runs through the instructions. | Run the program. | This feature responds as expected. |
-| Render the legend. | Within the main loop of the program, the game board legend is displayed to the user, both during the launch and for each iteration of the game. | Run the program and play an iteration of the main loop. | This feature responds as expected. |
+| Render the legend | Within the main loop of the program, the game board legend is displayed to the user, both during the launch and for each iteration of the game. | Run the program and play an iteration of the main loop. | This feature responds as expected. |
 | Render the game board. | Within the main loop of the program, the game board is displayed to the user, showing empty cells on launch, and populated cells each subsequent iteration. | Run the program and play an iteration of the main loop. | This feature responds as expected. |
 | Cell choice input | Request `{current_player} Make your move! (1-9):` and loop until the input is validated, then update the board. | Inputs: `“ ”`, `“0”`, `“11”`, `“Cat”` and `Enter key` | Loops until the input is validated, with appropriate error messages.<br>1.`## Input invalid. Please enter a number between 1-9! ##`<br> 2.`## Input invalid. This cell is taken, please choose an EMPTY cell! ##`<br>3.`## Input invalid. Please only enter a number between 1-9! ##`<br>4.`## Input invalid. Please enter a NUMBER between 1-9! ##` |
 | Check for winner | After each game board update, the `check_winner` function checks to see if any of the winning combos have been executed for each player marker. | Run the program and play several rounds of the game. | This feature responds as expected. |
