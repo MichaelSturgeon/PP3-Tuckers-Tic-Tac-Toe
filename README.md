@@ -1,4 +1,5 @@
 # Tucker’s Tic-Tac-Toe
+![Click here to view the project!](/documentation/other/project-collage.png)
 
 ## Introduction
 Tucker’s Tic-Tac-Toe is a command-line program developed in Python that provides users with a simple yet fun game of Tic-Tac-Toe. Tucker (the cowboy) will greet users and briefly explain all they need to know about the game. To play Tic-Tac-Toe users take turns filling in cells on a grid of nine squares. The first player to fill in three cells in a row WINS!<br>
