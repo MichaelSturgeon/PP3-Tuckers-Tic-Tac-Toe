@@ -104,6 +104,18 @@ I used the Code Institute PEP8 Python Linter to validate my Python code and ensu
 **Detected bugs and solutions**
 - When validating the user input upon them selecting their move, if players entered the value `0` they would be met with two error messages, the former that told the user `## This cell is taken, please choose an EMPTY cell! ##` and the latter that told them `## Please only enter a number between 1-9! ##`. This wasn't the intended outcome, as players should only receive the second error message due to `cell 0` not being a viable option. To fix this when validating the value, I checked to see if it was `< 1`, before checking if the cell was equal to `“ ”`.
 
+| Feature | Expected Outcome | Testing Procedure | Result |
+|----------|----------|----------|----------|
+| Introduction | Upon running the program, the game runs through the instructions. | Run the program. | This feature responds as expected. |
+| Render the legend. | Within the main loop of the program, the game board legend is displayed to the user, both during the launch and for each iteration of the game. | Run the program and play an iteration of the main loop. | This feature responds as expected. |
+| Render the game board. | Within the main loop of the program, the game board is displayed to the user, showing empty cells on launch, and populated cells each subsequent iteration. | Run the program and play an iteration of the main loop. | This feature responds as expected. |
+| Cell choice input | Request the user to `## Please enter a number between 1-9! ##` and loop until the input is validated, then update the board. | Inputs: `“ ”`, `“0”`, `“11”`, `“Cat”` and `Enter key` | Loops until the input is validated, with appropriate error messages.<br>1.`## Input invalid. Please enter a number between 1-9! ##`<br> 2.`## Input invalid. This cell is taken, please choose an EMPTY cell! ##`<br>3.`## Input invalid. Please only enter a number between 1-9! ##`<br>4.`## Input invalid. Please enter a NUMBER between 1-9! ##` |
+| Check for winner | After each game board update, the `check_winner` function checks to see if any of the winning combos have been executed for each player marker. | Run the program and play several rounds of the game. | This feature responds as expected. |
+| Check for a tie | After checking for a winner, the check-tie function checks to see if any game board cells are free to either continue or conclude the game. | Run the program and play several rounds of the game. | This feature responds as expected. |
+| Change the current player | Change the current player from one to the other, i.e., change `“X”` to `”O”` and vice versa. | Run the program and play a round of the game. | This feature responds as expected. |
+| Replay game/ Exit game choice input | Request user to input `(Y/N)` and loops until the input is validated the either, starts a new game or exits the program. | Inputs: `“ ”`, `“0”`, `“11”`, `“Cat”` and `Enter key` | Loops until the input is validated, with appropriate error message.<br>1.`## Input invalid. Enter either 'Y' or 'N' ##`. |
+
+
 ## Deployment
 **The site was deployed to Heroku using the following steps:**
 1. Navigate to heroku.com and create an account.
@@ -136,7 +148,7 @@ I used the Code Institute PEP8 Python Linter to validate my Python code and ensu
 
 ## Credits
 Media
-- The formation of characters used for the ASCII cowboy was taken from:[emojicombos.com](https://emojicombos.com/cowboy-ascii-art)
+- The formation of characters used for the ASCII cowboy was taken from: [emojicombos.com](https://emojicombos.com/cowboy-ascii-art)
 
 ## Acknowledgements  
 The completion of this project would not have been possible without the support of my partner; the patience, motivation, and enthusiasm she offers is second to none!
